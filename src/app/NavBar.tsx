@@ -1,0 +1,28 @@
+"use client";
+
+import Link from "next/link";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { usePathname } from "next/navigation";
+
+export default function NavBar() {
+  const pathName = usePathname(); // this will return the current path name
+
+  return (
+    <Navbar bg="dark" variant="dark" sticky="top" expand="sm" collapseOnSelect>
+      <Container>
+        <Navbar.Brand as={Link} href="/">
+          {/* ad the built next link to bootstrap */}
+          NextJs 13 image gallery
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbar-nav" />
+        <Navbar.Collapse id="navbar-nav">
+          <Nav>
+            <Nav.Link as={Link} href="/hello" active={pathName === "/hello"}>
+              Hello
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
