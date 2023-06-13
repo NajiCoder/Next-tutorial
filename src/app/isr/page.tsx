@@ -7,8 +7,6 @@ export const metadata = {
   title: "Incremental Static Regeneration",
 };
 
-export const revaludate = 15;
-
 export default async function IncrementalStaticRegenerationPage() {
   const response = await fetch(
     "https://api.unsplash.com/photos/random?client_id=" +
